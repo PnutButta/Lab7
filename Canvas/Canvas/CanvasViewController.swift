@@ -54,11 +54,6 @@ class CanvasViewController: UIViewController {
 
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func didPanFace(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: newlyCreatedFace)
         
@@ -71,10 +66,14 @@ class CanvasViewController: UIViewController {
             newlyCreatedFaceOriginalCenter = newlyCreatedFace.center
             newlyCreatedFace.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
             
+            newlyCreatedFace.isUserInteractionEnabled = true
              let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan))
             //adding the gesture recognizer
-            newlyCreatedFace.isUserInteractionEnabled = true
             newlyCreatedFace.addGestureRecognizer(panGestureRecognizer)
+            
+            let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(deleteFace))
+            //adding the gesture recognizer
+            newlyCreatedFace.addGestureRecognizer(doubleTapRecognizer)
             
         } else if sender.state == .changed {
             newlyCreatedFace.center = CGPoint(x: newlyCreatedFaceOriginalCenter.x + translation.x, y: newlyCreatedFaceOriginalCenter.y + translation.y)
@@ -102,6 +101,15 @@ class CanvasViewController: UIViewController {
         }
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func deleteFace(_ sender: UITapGestureRecognizer) {
+        sender.numberOfTapsRequired = 2
+        newlyCreatedFace.removeFromSuperview()
+    }
     /*
     // MARK: - Navigation
 
