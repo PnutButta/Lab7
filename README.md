@@ -22,7 +22,7 @@ The following **stretch** user stories are implemented:
 - [ ] User can use a rotation gesture to rotate the position of faces on the canvas (+1pt)
 - [ ] User sees the tray arrow adjust to point up or down in relation to the position of the tray (+1pt)
 - [ ] If the user releases a face in the tray area, the face animates back to it's original position on the tray (+1pt)
-- [ ] User can use a double tap gesture to delete a face (+1pt)
+- [x] User can use a double tap gesture to delete a face (+1pt)
 - [ ] If the user attempts to drag the tray above the open position, it should began a "frictional drag" (+1pt)
 - [ ] App tray features custom images (different from the supplied image assets) (+1pt)
 - [ ] User can choose between different canvas backgrounds (+1pt)
@@ -43,7 +43,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/OqIgEjq.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
